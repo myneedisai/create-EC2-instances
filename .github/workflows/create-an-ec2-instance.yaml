@@ -6,11 +6,11 @@ on:
       ec2_name:
         description: EC2 name
         required: true
-        default: 'App Server'
+        type: string
       ec2_instance_type:
         description: EC2 instance type
         required: true
-        default: "t2.micro"
+        type: string
       pem_key_name:
         description: EC2 pem key
         required: true
