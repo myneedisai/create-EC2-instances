@@ -22,7 +22,7 @@ on:
         type: string
 jobs:
   provision-ec2:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-lates
     steps:
     
       - name: Checkout code
