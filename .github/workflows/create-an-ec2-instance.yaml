@@ -34,6 +34,7 @@ jobs:
           clientSecret: ${{ secrets.PORT_CLIENT_SECRET }}
           baseUrl: https://api.getport.io
           operation: PATCH_RUN
+          runId: ${{ fromJson(inputs.port_context).runId }}
           logMessage: |
               About to create ec2 instance ${{ github.event.inputs.ec2_name }} .. ⛴️
 
