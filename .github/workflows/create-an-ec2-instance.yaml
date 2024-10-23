@@ -27,14 +27,6 @@ jobs:
     
       - name: Checkout code
         uses: actions/checkout@v4
-        
-      - name: Use Port JWT Token
-        env:
-          PORT_JWT: ${{ secrets.PORT_JWT_TOKEN }}
-        run: |
-          echo "Using JWT Token for authentication"
-          curl -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJvcmdJZCI6Im9yZ19NZzRMSFVKS2FLcFBnVlF4IiwiaXNzIjoiaHR0cHM6Ly9hcGkuZ2V0cG9ydC5pbyIsImlzTWFjaGluZSI6dHJ1ZSwic3ViIjoieTl4T3pxYkM1RE13WlAyWENRSlc1UW5iQ1ljT01DcGIiLCJwb3J0X3VzZXJfaWQiOiJ5OXhPenFiQzVETXdaUDJYQ1FKVzVRbmJDWWNPTUNwYiIsImp0aSI6IjNiNTJlZTYyLWM5YzctNDVhMC1hZjE0LTllMzhmMjI3ZDc0ZCIsImlhdCI6MTcyOTY5ODY2MywiZXhwIjoxNzI5NzA5NDYzfQ.PfmU95twbBzQs9hCRT-tuEm3WSGgeRgP5NxQMO8eZvk" https://your-api-endpoint
-    
       - name: Log starting of EC2 Instance creation 
         uses: port-labs/port-github-action@v1
         with:
