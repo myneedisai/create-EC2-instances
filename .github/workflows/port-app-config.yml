@@ -7,13 +7,13 @@
       "port": {
         "entity": {
           "mappings": {
-            "identifier": ".full_name",
-            "title": ".name",
-            "blueprint": "\"service\"",
+            "identifier": "ec2Instance",
+            "title": "EC2 Instance",
+            "blueprint": "\"ec2Instance\"",
             "properties": {
-              "url": ".html_url",
+              "url": "https://github.com/myneedisai/create-EC2-instances",
               "description": ".description",
-              "language": ".language"
+              "language": "HCL"
             }
           }
         }
