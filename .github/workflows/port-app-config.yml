@@ -1,0 +1,59 @@
+{
+  "resources": {
+    "repository": {
+      "selector": {
+        "query": "true"
+      },
+      "port": {
+        "entity": {
+          "mappings": {
+            "identifier": ".full_name",
+            "title": ".name",
+            "blueprint": "\"service\"",
+            "properties": {
+              "url": ".html_url",
+              "description": ".description",
+              "language": ".language"
+            }
+          }
+        }
+      }
+    },
+    "pull_request": {
+      "selector": {
+        "query": "true"
+      },
+      "port": {
+        "entity": {
+          "mappings": {
+            "identifier": ".head.repo.name + (.id | tostring)",
+            "title": ".title",
+            "blueprint": "\"githubPullRequest\"",
+            "properties": {
+              "creator": ".user.login",
+              "status": ".state"
+            }
+          }
+        }
+      }
+    },
+    "issue": {
+      "selector": {
+        "query": "true"
+      },
+      "port": {
+        "entity": {
+          "mappings": {
+            "identifier": ".number",
+            "title": ".title",
+            "blueprint": "\"githubIssue\"",
+            "properties": {
+              "status": ".state",
+              "creator": ".user.login"
+            }
+          }
+        }
+      }
+    }
+  }
+}
