@@ -27,6 +27,13 @@ jobs:
     
       - name: Checkout code
         uses: actions/checkout@v4  
+
+      - name: Use Port JWT Token
+        env:
+          PORT_JWT: ${{ secrets.PORT_JWT_TOKEN }}
+        run: |
+          echo "Using JWT Token for authentication"
+          curl -H "Authorization: Bearer $PORT_JWT" https://api.github.com/repos/myneedisai/create-EC2-instances
       - uses: port-labs/port-github-action@v1
         with:
           clientId: ${{ secrets.CLIENT_ID }}
