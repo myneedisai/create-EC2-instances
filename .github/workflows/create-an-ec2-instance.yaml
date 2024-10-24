@@ -18,7 +18,7 @@ on:
         type: string
       port_context:
         required: true
-        description: includes blueprint, run ID, and entity identifier from Port.
+        description: includes blueprint, run_id, and entity identifier from Port.
         type: string
 jobs:
   provision-ec2:
@@ -34,7 +34,7 @@ jobs:
           clientId: ${{ secrets.PORT_CLIENT_ID }}
           clientSecret: ${{ secrets.PORT_CLIENT_SECRET }}
           operation: PATCH_RUN
-          runId: ${{ fromJson(inputs.port_context).run_id }}
+          run_id: ${{ fromJson(inputs.port_context).run_id }}
           logMessage: |
               About to create ec2 instance ${{ github.event.inputs.ec2_name }} .. ⛴️
 
