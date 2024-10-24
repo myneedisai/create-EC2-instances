@@ -33,7 +33,7 @@ jobs:
           PORT_JWT: ${{ secrets.PORT_JWT_TOKEN }}
         run: |
           echo "Using JWT Token for authentication"
-          curl -H "Authorization: Bearer $PORT_JWT" https://api.github.com/repos/myneedisai/create-EC2-instances
+          curl -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJvcmdJZCI6Im9yZ19NZzRMSFVKS2FLcFBnVlF4IiwiaXNzIjoiaHR0cHM6Ly9hcGkuZ2V0cG9ydC5pbyIsImlzTWFjaGluZSI6dHJ1ZSwic3ViIjoieTl4T3pxYkM1RE13WlAyWENRSlc1UW5iQ1ljT01DcGIiLCJwb3J0X3VzZXJfaWQiOiJ5OXhPenFiQzVETXdaUDJYQ1FKVzVRbmJDWWNPTUNwYiIsImp0aSI6IjFkYTg4MWIxLTgyYmItNDJjYi1iMDYzLWEyMWI3MGY5MDQxMiIsImlhdCI6MTcyOTc4NzE5MCwiZXhwIjoxNzI5Nzk3OTkwfQ.5w3f6tbl-RIAJY-3BpWGO6wzVMWhBdekAEtjpLUqQqk" https://api.github.com/repos/myneedisai/create-EC2-instances
           
       - name: Log starting of EC2 Instance creation 
         uses: port-labs/port-github-action@v1
