@@ -27,6 +27,26 @@ jobs:
     
       - name: Checkout code
         uses: actions/checkout@v4  
+      - uses: port-labs/port-github-action@v1
+        with:
+          clientId: ${{ secrets.CLIENT_ID }}
+          clientSecret: ${{ secrets.CLIENT_SECRET }}
+          operation: UPSERT
+          identifier: port-github-action
+          title: Port Github Action
+          blueprint: PortIntegration
+          properties: |
+            {
+              "version": "v1"
+            }
+               team: '["Port"]'
+               relations: |
+            {
+              "deployedAt": "prod"
+            }
+          runId: ${{ fromJson(inputs.port_context).runId }}
+          logMessage: |
+              About to create ec2 instance ${{ github.event.inputs.ec2_name }} .. ⛴️
         
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v1
