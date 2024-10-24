@@ -26,20 +26,13 @@ jobs:
     steps:
     
       - name: Checkout code
-        uses: actions/checkout@v4
-        
+        uses: actions/checkout@v4  
       - name: Log starting of EC2 Instance creation 
         uses: port-labs/port-github-action@v1
         with:
+          baseUrl: https://api.getport.io
           clientId: ${{ secrets.PORT_CLIENT_ID }}
           clientSecret: ${{ secrets.PORT_CLIENT_SECRET }}
-          baseUrl: https://api.getport.io
-      - name: Use Port JWT Token
-        env:
-          PORT_JWT: ${{ secrets.PORT_JWT_TOKEN }}
-        run: |
-          echo "Using JWT Token for authentication"
-          curl -H "Authorization: Bearer $PORT_JWT" https://api.github.com/myneedisai/create-EC2-instances
           operation: PATCH_RUN
           runId: ${{ fromJson(inputs.port_context).runId }}
           logMessage: |
