@@ -30,16 +30,6 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: '14'
-
-      - name: Log starting of EC2 Instance creation 
-        uses: port-labs/port-github-action@v1
-        with:
-          clientId: ${{ secrets.PORT_CLIENT_ID }}
-          clientSecret: ${{ secrets.PORT_CLIENT_SECRET }}
-          operation: PATCH_RUN
-          runId: ${{ fromJson(inputs.port_context.run_id) }}
-          logMessage: |
-              About to create ec2 instance ${{ github.event.inputs.ec2_name }} .. ⛴️
               
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v1
